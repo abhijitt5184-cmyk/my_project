@@ -1,179 +1,185 @@
+Here is the combined code. I have placed the CSS inside a `<style>` tag within the HTML's `<head>` section. You can save this entire block as a single `index.html` file and open it in your browser.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-    
-    <title>Discovery Land Company </title>
-    <style>   
-        
-        * { 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discovery Land Company - Clone</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
         body, html {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             height: 100%;
-            font-family: 'Arial', sans-serif; 
+            width: 100%;
         }
 
-        .hero-section {
+        /* Main Container */
+        .hero-container {
             position: relative;
-            width: 100%;
             height: 100vh;
-            
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://discoverylandco.com/images/homepage/hero-home.mp4');   
-                     background-position: center;
+            width: 100%;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
             color: #ffffff;
         }
 
-  
-        .navbar {
+        /* Fullscreen Background Video */
+        .background-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translateX(-50%) translateY(-50%);
+            z-index: -2;
+            object-fit: cover;
+        }
+
+        /* Dark Overlay for Text Readability */
+        .video-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.25);
+            z-index: -1;
+        }
+
+        /* Top Header */
+        .top-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 30px 50px;
-            z-index: 10;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
         }
 
-        .nav-left, .nav-right {
+        .menu-left, .search-right {
+            cursor: pointer;
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            cursor: pointer;
-            text-transform: uppercase;
-        }
-
-        
-        .menu-icon {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-        .menu-icon span {
-            display: block;
-            width: 20px;
-            height: 1px;
-            background-color: #ffffff;
         }
 
         .logo {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 1.5rem;
+            text-transform: none;
+            letter-spacing: 0;
+            font-weight: normal;
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-family: 'Times New Roman', Times, serif; 
-            font-size: 24px;
-            font-weight: normal;
-            letter-spacing: 1px;
-        }
-        
-        .logo-icon {
-            font-size: 28px;
+            gap: 8px;
         }
 
-  
+        .compass-icon {
+            font-size: 1.8rem;
+        }
+
+        /* Main Content (Center) */
         .hero-content {
-            text-align: center;
-            margin-top: -50px; /* Slight adjustment to match visual center */
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
+            text-align: center;
+            padding-bottom: 50px;
         }
 
-        .hero-title {
-            font-family: 'Times New Roman', Times, serif; /* Serif font for main heading */
-            font-size: 52px;
-            font-weight: 400;
+        .hero-content h1 {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 3.5rem;
+            font-weight: normal;
             letter-spacing: 2px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            text-shadow: 0px 2px 10px rgba(0,0,0,0.3);
         }
 
-        .hero-subtitle {
-            font-size: 14px;
+        .hero-content p {
+            font-size: 1rem;
             font-weight: 300;
             margin-bottom: 40px;
-            letter-spacing: 0.5px;
+            text-shadow: 0px 1px 5px rgba(0,0,0,0.3);
         }
 
-       
-        .selection-box {
+        /* Bottom White Navigation Bar */
+        .bottom-nav {
             background-color: #ffffff;
-            color: #333333;
+            padding: 10px 10px 10px 30px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
-            padding: 15px 20px;
-            border-radius: 8px;
             gap: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
         }
 
-        .selection-link {
+        .bottom-nav a {
             text-decoration: none;
             color: #333333;
-            font-size: 13px;
-            font-weight: 600;
-            transition: color 0.3s;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
 
-        .selection-link:hover {
-            color: #666666;
+        .bottom-nav a:hover {
+            color: #777777;
         }
 
         .btn-locations {
-            background-color: transparent;
             border: 1px solid #cccccc;
-            color: #333333;
-            padding: 10px 20px;
-            font-size: 11px;
-            font-weight: 600;
+            padding: 12px 25px;
+            border-radius: 4px;
             letter-spacing: 1px;
             text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s;
         }
 
         .btn-locations:hover {
-            background-color: #f0f0f0;
+            background-color: #f5f5f5;
         }
 
+        /* Bottom Corner Controls */
         .bottom-controls {
             position: absolute;
             bottom: 30px;
-            left: 0;
             width: 100%;
             display: flex;
             justify-content: space-between;
-            padding: 0 50px;
-            align-items: center;
+            padding: 0 30px;
+            pointer-events: none;
+        }
+
+        .pause-btn, .scroll-arrow {
+            pointer-events: auto;
         }
 
         .pause-btn {
-            background-color: rgba(0, 0, 0, 0.5);
-            border: none;
+            background: rgba(0, 0, 0, 0.5);
             color: white;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            border: none;
+            padding: 10px 15px;
+            font-size: 0.8rem;
             cursor: pointer;
-            font-size: 12px;
+            border-radius: 3px;
         }
 
-        .scroll-down {
-            color: white;
-            font-size: 20px;
+        .scroll-arrow {
+            font-size: 1.2rem;
             cursor: pointer;
             animation: bounce 2s infinite;
         }
@@ -187,46 +193,45 @@
 </head>
 <body>
 
-    <div class="hero-section">
+    <div class="hero-container">
+        <video autoplay loop muted playsinline class="background-video">
+            <source src="https://discoverylandco.com/images/homepage/hero-home.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         
-        <nav class="navbar">
-            <div class="nav-left">
-                <div class="menu-icon">
-                    <span></span>
-                    <span></span>
-                </div>
-                MENU
+        <div class="video-overlay"></div>
+
+        <header class="top-header">
+            <div class="menu-left">
+                <span class="icon-line"></span> MENU
             </div>
-            
             <div class="logo">
-                <span class="logo-icon">❂</span> 
-                Discovery Land Company
+                <span class="compass-icon">❂</span> Discovery Land Company
             </div>
-            
-            <div class="nav-right">
-                <span style="font-size: 16px;">⌕</span>
-                SEARCH
+            <div class="search-right">
+                ⚲ SEARCH
             </div>
-        </nav>
+        </header>
 
         <main class="hero-content">
-            <h1 class="hero-title">DISCOVER YOUR WORLD</h1>
-            <p class="hero-subtitle">Select from locations below or scroll to discover more.</p>
-            
-            <div class="selection-box">
-                <a href="#" class="selection-link">Our Worlds</a>
-                <a href="#" class="selection-link">Real Estate</a>
-                <a href="#" class="selection-link">Experiences</a>
-                <button class="btn-locations">LOCATIONS</button>
-            </div>
+            <h1>DISCOVER YOUR WORLD</h1>
+            <p>Select from locations below or scroll to discover more.</p>
+
+            <nav class="bottom-nav">
+                <a href="#">Our Worlds</a>
+                <a href="#">Real Estate</a>
+                <a href="#">Experiences</a>
+                <a href="#" class="btn-locations">LOCATIONS</a>
+            </nav>
         </main>
 
         <div class="bottom-controls">
             <button class="pause-btn">||</button>
-            <div class="scroll-down">↓</div>
+            <div class="scroll-arrow">↓</div>
         </div>
-
     </div>
 
 </body>
 </html>
+
+```
