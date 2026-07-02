@@ -520,7 +520,7 @@
             position: relative;
             width: 100%;
             height: 80vh;
-            background: url('https://images.unsplash.com/photo-1502680390469-be75c86b636f?q=80&w=2000&auto=format&fit=crop') center/cover;
+            background: url('https://www.datocms-assets.com/197197/1779463201-image.jpg?auto=format&fit=max&h=3000&w=2000') center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -584,169 +584,152 @@
             display: flex; justify-content: center; gap: 40px; padding: 20px 0; font-size: 13px; font-weight: 500; border-top: 1px solid var(--border-color); 
         }
         /* Grid Cards */
-        .cards-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
+       .split-section {
+    display: flex;
+    min-height: 80vh; 
+}
 
-        .card {
-            display: flex;
-            flex-direction: column;
-        }
+.hero-reverse {
+    flex-direction: row; 
+}
 
-        .card-img-wrapper {
-            width: 100%;
-            height: 500px;
-            overflow: hidden;
-            margin-bottom: 1rem;
-        }
+/* Text Container Formatting */
+.text-container {
+    flex: 0 0 35%; 
+    padding: 8% 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-        .card-img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
+.text-container p {
+    font-size: 0.9rem;
+    margin: 20px 0;
+    color: #555;
+}
 
-        .card-img-wrapper:hover img {
-            transform: scale(1.02);
-        }
+/* Image Container Formatting */
+.image-container {
+    flex: 1; 
+    background-size: cover;
+    background-position: center;
+}
 
-        .card-title {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.25rem;
-        }
+/* --- LIVE IMAGES --- */
+.hero-img { 
+    background-image: url('https://www.datocms-assets.com/197197/1779463201-image.jpg?auto=format&fit=max&h=3000&w=2000'); 
+}
+.golf-img { 
+    background-image: url('https://www.datocms-assets.com/197197/1773158369-1_1.jpg?auto=format&fit=max&h=3000&w=2000'); 
+}
+.surf-img { 
+    background-image: url('https://www.datocms-assets.com/197197/1773158650-3-1.jpg?auto=format&fit=max&h=3000&w=2000'); 
+}
 
-        .card-subtitle {
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
+/* --- Specific Components --- */
+.accordion-list {
+    list-style: none;
+    margin: 40px 0;
+}
 
-        /* Footer */
-        footer {
-            background-color: var(--footer-bg);
-            padding: 4rem 2rem 2rem;
-        }
+.accordion-list li {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
-        .footer-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1.5fr 1fr 1fr;
-            gap: 2rem;
-        }
+.accordion-list li:first-child {
+    border-top: 1px solid var(--border-color);
+}
 
-        .footer-logo {
-            font-size: 1.25rem;
-            margin-bottom: 2rem;
-        }
+.ghost-btn {
+    align-self: flex-start;
+    background: transparent;
+    border: 1px solid var(--text-color);
+    padding: 12px 24px;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
 
-        .footer-heading {
-            font-size: 0.65rem;
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-        }
+.ghost-btn:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
 
-        /* Footer Find List */
-        .find-list {
-            border-top: 1px solid var(--border-color);
-            margin-bottom: 3rem;
-        }
+/* Thumbnails with Live Images */
+.thumbnails {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+.thumb { 
+    font-size: 0.7rem; 
+}
+.t-img {
+    width: 60px;
+    height: 40px;
+    margin-top: 5px;
+    background-size: cover;
+    background-position: center;
+}
+.thumb-1 { background-image: url('https://www.datocms-assets.com/197197/1773158689-3-3.jpg?auto=format&fit=max&h=500&w=500'); }
+.thumb-2 { background-image: url('https://www.datocms-assets.com/197197/1773158664-3-2.jpg?auto=format&fit=max&h=500&w=500'); }
+.thumb-3 { background-image: url('https://www.datocms-assets.com/197197/1773159387-4-2.jpg?auto=format&fit=max&h=500&w=500'); }
 
-        .find-list li {
-            border-bottom: 1px solid var(--border-color);
-        }
 
-        .find-list a {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-            font-size: 0.85rem;
-        }
+/* --- Footer --- */
+.site-footer {
+    padding: 8% 5% 2%;
+}
 
-        .find-list a::after {
-            content: '→';
-            color: var(--text-light);
-        }
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 80px;
+}
 
-        /* Footer Standard Lists */
-        .footer-links li {
-            margin-bottom: 0.75rem;
-        }
+.col h4 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
 
-        .footer-links a {
-            font-size: 0.85rem;
-            color: var(--text-main);
-        }
+.col ul { list-style: none; }
+.col a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 10px;
+}
 
-        .footer-links a:hover {
-            color: var(--text-light);
-        }
+.arrow-link {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    width: 250px;
+}
 
-        /* Mission Section */
-        .mission-section {
-            grid-column: 2;
-            padding-right: 2rem;
-        }
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-size: 0.75rem;
+    color: #777;
+}
 
-        .mission-text {
-            font-size: 0.85rem;
-            color: var(--text-light);
-            line-height: 1.8;
-            margin-top: 1rem;
-        }
-
-        /* Footer Bottom */
-        .footer-bottom {
-            max-width: 1400px;
-            margin: 4rem auto 0;
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.75rem;
-            color: var(--text-light);
-        }
-
-        .legal-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 900px) {
-            .cards-grid {
-                grid-template-columns: 1fr;
-            }
-            .footer-container {
-                grid-template-columns: 1fr 1fr;
-            }
-            .mission-section {
-                grid-column: 1 / -1;
-            }
-            .card-img-wrapper {
-                height: 350px;
-            }
-        }
+.mission { max-width: 400px; }
+.legal { display: flex; gap: 50px; }
+.legal-links { display: flex; gap: 20px; }
+.legal-links a { color: #777; text-decoration: none; }
         
-        @media (max-width: 600px) {
-            .footer-container {
-                grid-template-columns: 1fr;
-            }
-            .header-top {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            .header-nav {
-                flex-wrap: wrap;
-            }
-            .footer-bottom {
-                flex-direction: column;
-                gap: 1rem;
-                text-align: center;
-            }
-        }
     </style>
 </head>
 <body>
@@ -891,7 +874,7 @@
 
     <div class="hero-container">
         <video autoplay loop muted playsinline class="background-video">
-            <source src="https://discoverylandco.com/images/homepage/hero-home.mp4" type="video/mp4">
+            <source src="https://stream.mux.com/1Voyr9evedvdb8m9y02ozuBZHyJi024AtG/high.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         
@@ -912,15 +895,13 @@
         </header>
 
         <main class="hero-content">
-            <h1>DISCOVER YOUR WORLD</h1>
+            <h3>Experiences</h3>
+            <h1>UNFORGETTABLE EXPERIENCES</h1>
+
+        
             <p>Select from locations below or scroll to discover more.</p>
 
-            <nav class="bottom-nav">
-                <a href="#">Our Worlds</a>
-                <a href="#">Real Estate</a>
-                <a href="#">Experiences</a>
-                <a href="#" class="btn-locations">LOCATIONS</a>
-            </nav>
+            
         </main>
 
         <div class="bottom-controls">
@@ -941,10 +922,13 @@
         </div>
         <hr style="border: none; border-top: 1px solid #37352e; margin: 0; padding:0%">
         <nav class="sub-nav">
-           <h5> Our Worlds</h5>
-           <h5>Real Estate</h5>
-            <h5>Experiences</h5>
-            <h5>Contact</h5>
+           <h5>overview </h5>
+           <h5>Golf</h5>
+            <h5>Outdoor pursult</h5>
+            <h5>Wellness</h5>
+            <h5>cuilary</h5>
+            <h5>Discovery downtown</h5>
+            </nav>
         </nav>
         <hr style="border: none; border-top: 1px solid #e0dfd9; margin: 0; padding:0%">
     </header>
@@ -953,202 +937,100 @@
         <section class="section-container">
             <div class="section-header">
                 <div class="header-left">
-                    <span class="eyebrow">Our Worlds</span>
-                    <h2 class="section-title">Browse our private residential communities and resorts.</h2>
-                    <button class="view-all-btn">VIEW ALL</button>
-                </div>
-                <div class="header-right">
-                    <ul class="filter-menu">
-                        <li class="active">All</li>
-                        <li>Central America & Caribbean</li>
-                        <li>United States</li>
-                        <li>Europe & UAE</li>
-                    </ul>
-                </div>
-            </div>
+                    <span class="eyebrow">Exclusive
+to your world
+</span>
+                    
 
-            <div class="gallery-row">
-                <div class="gallery-card"><img src="https://www.datocms-assets.com/197197/1777382297-ext05_resort-arrival_b5_1.jpg" alt="Resort"></div>
-                <div class="gallery-card"><img src="https://www.datocms-assets.com/197197/1779435151-territory_lifestyle-3-2.jpg" alt="Boat"></div>
-                <div class="gallery-card"><img src="https://www.datocms-assets.com/197197/1774020898-discovery-dunes.jpg" alt="House"></div>
-                <div class="gallery-card"><img src="https://www.datocms-assets.com/197197/1777565054-ct_cover.jpg" alt="Beach"></div>
-            </div>
-        </section>
 
-        <section class="section-container">
-            <div class="section-header">
-                <div class="header-left">
-                    <span class="eyebrow">Real Estate</span>
-                    <h2 class="section-title">Find your bespoke residence in one of our communities.</h2>
-                </div>
-                <div class="header-right">
-                    <ul class="filter-menu">
-                        <li class="active">All</li>
-                        <li>Beach & Oceanfront Properties</li>
-                        <li>Golf & Countryside Properties</li>
-                        <li>Desert Properties</li>
-                    </ul>
-                </div>
-            </div>
+    <section class="split-section hero-reverse">
+        <div class="image-container hero-img"></div>
+        <div class="text-container">
+            <h1 class="serif-title">Discovery Land Company creates private communities where families gather, adventures unfold, and the best moments of life happen naturally.</h1>
             
-            <h3 class="serif-text" style="margin-bottom: 20px; font-size: 24px;">Latest listings</h3>
-            <button class="view-all-btn" style="float: right; margin-top: -45px;">VIEW ALL</button>
+            <ul class="accordion-list">
+                <li>Elevated experiences</li>
+                <li>Activity-driven lifestyle</li>
+                <li>Family-first programming</li>
+            </ul>
 
-            <div class="gallery-row">
-                <div class="listing-card">
-                    <div class="listing-img"><img src="https://www.datocms-assets.com/197197/1780313869-bar2368_sales_images_wb_87_01.jpg?fit=max&h=1000&q=85&w=1000" alt="Plot"></div>
-                    <div class="listing-info">
-                        <h4>West Beach Homesite #87</h4>
-                        <p>Barbuda, Barbuda, West Indies</p>
-                        <div class="listing-meta">
-                            <span>⛶ 2.05 acres</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="listing-card">
-                    <div class="listing-img"><img src="https://www.datocms-assets.com/197197/1737987057-cottage_exterior_beach-kienan-brownrigg.jpg?fit=max&h=1000&q=85&w=1000" alt="House"></div>
-                    <div class="listing-info">
-                        <h4>Coco Cottage 41</h4>
-                        <p>Barbuda, Barbuda, West Indies</p>
-                        <div class="listing-meta">
-                            <span>⛶ 3,870 sq.ft</span> <span>🛏 4 beds</span> <span>🛁 4.5 baths</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="listing-card">
-                    <div class="listing-img"><img src="https://www.datocms-assets.com/197197/1777458768-1_dji_20260206091412_0953_d.jpg?fit=max&h=1000&q=85&w=1000" alt="Cabin"></div>
-                    <div class="listing-info">
-                        <h4>Estate 89</h4>
-                        <p>Goozer Ranch, Harrison, Idaho</p>
-                        <div class="listing-meta">
-                            <span>⛶ 6,934 sq.ft</span> <span>🛏 7 beds</span> <span>🛁 8.5 baths</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <div class="hero-banner">
-            <div>
-                <span class="eyebrow" style="color: #fff;">Experiences</span>
-                <h2>Memorable days. Exceptional nights. We believe it's our mission to make every minute matter.</h2>
+            <div class="sub-text">
+                <h3 class="sans-subtitle">Life without limits</h3>
+                <p>Our worlds are designed to offer you endless opportunities to share incredible once in a lifetime experiences and adventures every minute of the day...</p>
             </div>
         </div>
+    </section>
 
-        <section class="split-section">
-            <div class="split-left">
-                <span class="eyebrow">Discovery Family</span>
-                <h2 class="section-title">For more than three decades, Discovery Land Company has created unique places among nature's exquisite beauty.</h2>
-                
-                <div class="feature-list">
-                    <ul class="feature-nav">
-                        <li class="active">• Inspired by the land</li>
-                        <li>Luxury bespoke homes</li>
-                        <li>Experience beyond compare</li>
-                    </ul>
-                    <div class="feature-text">
-                        <p>For more than three decades, Discovery has built communities that encourage families to create unforgettable memories in the world's most beautiful settings. Each property incorporates the local architecture, culture, and cuisine to create an authentic and immersive experience for the entire family.</p>
-                        <button class="view-all-btn">ABOUT US</button>
-                    </div>
-                </div>
+    <section class="split-section">
+        <div class="text-container">
+            <h2 class="serif-title">Golf</h2>
+            <p>We commission the world's most renowned course architects to design spectacular golf experiences on challenging yet incredibly playable 18-hole courses...</p>
+            <button class="ghost-btn">LEARN MORE</button>
+        </div>
+        <div class="image-container golf-img"></div>
+    </section>
+
+    <section class="split-section">
+        <div class="text-container">
+            <div class="thumbnails">
+                <div class="thumb"><span>01.</span><div class="t-img thumb-1"></div></div>
+                <div class="thumb"><span>02.</span><div class="t-img thumb-2"></div></div>
+                <div class="thumb"><span>03.</span><div class="t-img thumb-3"></div></div>
             </div>
-            <div class="split-right">
-                <img src="https://www.datocms-assets.com/197197/1777109144-experiences.jpg?auto=format&fit=max&h=3000&w=2000" alt="Landscape">
+            <h2 class="serif-title">Outdoor Pursuits</h2>
+            <p>Our signature Outdoor Pursuits program is designed for families to create lasting memories together...</p>
+            <button class="ghost-btn">LEARN MORE</button>
+        </div>
+        <div class="image-container surf-img"></div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="col logo-col">
+                <h3>Discovery</h3>
             </div>
-        </section>
-
-
-        <main>
-        <h1 class="section-title serif">Discover more</h1>
+            <div class="col list-col">
+                <h4>FIND</h4>
+                <a href="#" class="arrow-link">Real Estate <span>→</span></a>
+                <a href="#" class="arrow-link">Experiences <span>→</span></a>
+            </div>
+            <div class="col">
+                <h4>DISCOVER</h4>
+                <ul>
+                    <li><a href="#">Communities</a></li>
+                    <li><a href="#">Real Estate</a></li>
+                    <li><a href="#">Experiences</a></li>
+                    <li><a href="#">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h4>COMPANY</h4>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Foundation</a></li>
+                </ul>
+            </div>
+        </div>
         
-        <div class="cards-grid">
-            <!-- Card 1 -->
-            <div class="card">
-                <div class="card-img-wrapper">
-                    <!-- Placeholder Beach Image -->
-                    <img src="https://discoverylandco.com/images/homepage/home-1.jpg" alt="Two surfers walking on a beach">
-                </div>
-                <div class="card-title">Our Communities</div>
-                <div class="card-subtitle">Explore all our communities and resorts</div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="card">
-                <div class="card-img-wrapper">
-                    <!-- Placeholder Real Estate Image -->
-                    <img src="https://discoverylandco.com/images/homepage/home-10.jpg" alt="Luxury home at sunset">
-                </div>
-                <div class="card-title">Real Estate</div>
-                <div class="card-subtitle">Browse our current listings</div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Footer Area -->
-    <footer>
-        <div class="footer-container">
-            
-            <!-- Column 1: Logo -->
-            <div class="footer-col">
-                <div class="footer-logo serif">
-                    <span>✧</span> Discovery<br>
-                    <span class="uppercase-text" style="font-size: 0.5rem; letter-spacing: 2px;">Land Company</span>
-                </div>
-            </div>
-
-            <!-- Column 2: Find & Mission -->
-            <div class="footer-col">
-                <div class="footer-heading uppercase-text">FIND</div>
-                <ul class="find-list"><br><br>
-<br><br>
-                    <hr>
-                   <br> Real Estate<br><hr>
-                   <br> Experiences<br><hr>
-                </ul>
-            </div>
-
-            <!-- Column 3: Discover Links -->
-            <div class="footer-col">
-                <div class="footer-heading uppercase-text">DISCOVER</div>
-                <ul class="footer-links">
-                    Communities<br><br>
-                    Real Estate<br><br>
-                    Experiences<br><br>
-                    Gallery<br><br>
-                </ul>
-            </div>
-
-            <!-- Column 4: Company Links -->
-            <div class="footer-col">
-                <div class="footer-heading uppercase-text">COMPANY</div>
-                <ul class="footer-links">
-                    About<br><br>
-                    Careers<br><br>
-                    Contact<br><br>
-                    Foundation<br><br>
-                </ul>
-            </div>
-
-            <!-- Mission Section (Below Find) -->
-            <div class="mission-section">
-                <div class="footer-heading uppercase-text">Our Mission</div>
-                <p class="mission-text">
-                    Create moments of joy and wonder, unforgettable memories, and cherished times together with those who matter most.
-                </p>
-            </div>
-
-        </div>
-
-        <!-- Copyright and Legal -->
         <div class="footer-bottom">
-            <div>&copy; Discovery Land Company. All rights reserved.</div>
-            <div class="legal-links">
-                <a href="#">Privacy</a>
-                <a href="#">Disclaimer</a>
-                <span>Site by <strong>outpøst</strong></span>
+            <div class="mission">
+                <h4>Our Mission</h4>
+                <p>Create moments of joy and wonder, unforgettable memories, and cherished times together with those who matter most.</p>
+            </div>
+            <div class="legal">
+                <p>© Discovery Land Company. All rights reserved.</p>
+                <div class="legal-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Disclaimer</a>
+                    <p>Site by <strong>outpost</strong></p>
+                </div>
             </div>
         </div>
     </footer>
+
+
 
     </main>
 
